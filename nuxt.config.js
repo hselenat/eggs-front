@@ -1,3 +1,14 @@
+/*
+ * @name: 组件名
+ * @Description: 组件描述
+ * @module: 组件存放位置
+ * @Version: 0.1.0
+ * @Autor: hselenat
+ * @Date: 2020-08-01 11:32:28
+ * @LastEditors: hselenat
+ * @LastEditTime: 2020-08-01 17:18:18
+ * @example: 调用示例
+ */
 
 export default {
   /*
@@ -55,7 +66,8 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
@@ -68,5 +80,14 @@ export default {
   */
   build: {
     transpile: [/^element-ui/]
+  },
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:7001',
+      secure: false,
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
   }
 }

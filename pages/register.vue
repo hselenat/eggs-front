@@ -6,7 +6,7 @@
  * @Autor: hselenat
  * @Date: 2020-08-01 20:57:16
  * @LastEditors: hselenat
- * @LastEditTime: 2020-08-02 11:39:31
+ * @LastEditTime: 2020-08-02 12:31:11
  * @example: 调用示例
 -->
 <template>
@@ -58,8 +58,8 @@ export default {
         email: '942430793@qq.com',
         captcha: '',
         nickname: 'pikachu',
-        password: '',
-        repassword: ''
+        password: 'a123456_-',
+        repassword: 'a123456_-'
       },
       rules: {
         email: [
@@ -87,7 +87,7 @@ export default {
         password: [
           {
             required: true,
-            pattern: /^[\w_-]{6-12}$/g,
+            pattern: /^[\w-\s]+$/,
             message: '请输入6-12位密码'
           }
         ],
@@ -114,7 +114,7 @@ export default {
   methods: {
     handleRegister () {
       // eslint-disable-next-line require-await
-      this.refs.registerForm.validator(async (valid) => {
+      this.$refs.registerForm.validate(async (valid) => {
         if (valid) {
           // eslint-disable-next-line no-console
           console.log('校验成功', valid)

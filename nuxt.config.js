@@ -6,7 +6,7 @@
  * @Autor: hselenat
  * @Date: 2020-08-01 11:32:28
  * @LastEditors: hselenat
- * @LastEditTime: 2020-08-01 17:18:18
+ * @LastEditTime: 2020-08-02 16:40:02
  * @example: 调用示例
  */
 
@@ -47,7 +47,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/axios'
   ],
   /*
   ** Auto import components
